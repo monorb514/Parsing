@@ -31,4 +31,4 @@ def save(data):
         session.add(item)
     session.commit()
     session.close()
-    print("Данные сохранены")
+    print("Data saved successfully")
