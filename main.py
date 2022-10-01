@@ -5,10 +5,11 @@ import requests
 from bs4 import BeautifulSoup
 from decouple import config
 
+import db
+
 
 URL = 'https://www.kijiji.ca/b-apartments-condos/city-of-toronto/'
 END = 'c37l1700273'
-default_image = 'https://afs.googleusercontent.com/kijiji-ca/csa-image1-large.png'
 
 HEADERS = {
            'user-agent': config('USER_AGENT'),
@@ -44,6 +45,17 @@ def get_blocks():
                               'image': i.find('img').get('data-src'),
                               'published': get_date(i.find('span', class_='date-posted').text.strip()),
                               })
+    else:
+        print('Please enter correct data')
+    return items
+
+
+if __name__ == '__main__':
+    db.save(get_blocks())
+
+
+
+
 
 
 
