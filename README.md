@@ -26,6 +26,4 @@ URL=postgres+psycopg2://<USERNAME>:<PASSWORD>@<IP_ADDRESS>:<PORT>/<DATABASE_NAME
 USER_AGENT=your_user_agent
 ```
 
-## Contributing 
-Можете отправлять PL
 
